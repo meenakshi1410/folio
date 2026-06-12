@@ -38,7 +38,7 @@ def build_summary():
   {today}
   ==========================
   WEATHER
-  {weather)
+  {weather}
   TODAY'S QUOTE
    {quote}
   ==========================
