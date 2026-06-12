@@ -52,5 +52,5 @@ def run():
   with open("daily_summary.txt","w", encoding="utf-8") as f:
     f.write(summary)
   print("Pulse ran successfully.")
-if _name_=="_main_":
+if __name__=="_main_":
   (run)
