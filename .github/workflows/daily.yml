@@ -1,8 +1,10 @@
 # The workflow name appears in the GitHub Actions tab
 name: Pulse - Daily Summary Bot
+
 on:
-schedule:
-- cron: '30 2 * * *'
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: '30 2 * * *'
 # Manual trigger: adds a "Run workflow" button to the Actions tab. n-y20
 # Use this to test anytime without waiting for the cron.
 workflow_dispatch:
