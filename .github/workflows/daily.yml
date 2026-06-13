@@ -1,33 +1,28 @@
-# The workflow name appears in the GitHub Actions tab
 name: Pulse - Daily Summary Bot
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '30 2 * * *'
-# Manual trigger: adds a "Run workflow" button to the Actions tab. n-y20
-# Use this to test anytime without waiting for the cron.
-  
+
 jobs:
   run-pulse:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-#Step 2: Install Python 3.11
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-# Step 3:
-Install the requests library
+      
       - name: Install dependencies
         run: pip install -r requirements.txt
-# Step 4: Run your bot
+      
       - name: Run Pulse bot
         run: python bot.py
-
-#Step 5: Save the output file so you can download it
+      
       - name: Upload summary as artifact
         uses: actions/upload-artifact@v4
         with:
